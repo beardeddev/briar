@@ -1,0 +1,56 @@
+﻿@model Briar.Models.Page
+@Html.ValidationSummary(true)
+<fieldset>
+    <ul>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.LayoutPath)
+            @Html.EditorFor(model => model.LayoutPath)
+            @Html.ValidationMessageFor(model => model.LayoutPath)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Url)
+            @Html.EditorFor(model => model.Url)
+            @Html.ValidationMessageFor(model => model.Url)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Title)
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Keywords)
+            @Html.EditorFor(model => model.Keywords)
+            @Html.ValidationMessageFor(model => model.Keywords)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Body)
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.ImageSource)
+            @Html.EditorFor(model => model.ImageSource)
+            @Html.ValidationMessageFor(model => model.ImageSource)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.State)
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.ShowInMenu)
+            @Html.EditorFor(model => model.ShowInMenu)
+            @Html.ValidationMessageFor(model => model.ShowInMenu)
+        </li>
+        <li class="buttons">
+            @Html.Submit()
+            &nbsp;
+            @Html.ActionLinkToList()
+        </li>
+    </ul>
+</fieldset>

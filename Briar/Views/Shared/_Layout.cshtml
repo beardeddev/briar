@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="description" content="@ViewBag.Description" />
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.min.js"></script>
+    <link rel="alternate" type="application/rss+xml" title="Example RSS" href="@AppSettings.RSSLink" />
+    @RenderSection("head",required:false)
+</head>
+<body>
+    <header>
+        <nav>
+            @Html.Menu("MainMenu")
+        </nav>
+    </header>
+    <div class="wrapper">
+        <section id="content">
+            @RenderBody()
+        </section>
+        <aside>
+            @{
+                Html.RenderPartial("_CategoriesCloud", ViewBag.CategoriesCloud as IEnumerable<Briar.ViewModels.Cloud>);
+                Html.RenderPartial("_Archive", ViewBag.Archive as Briar.ViewModels.ArchiveCollection);
+            }
+        </aside>
+    </div>
+    <footer>
+    <span>
+        @Display.RequestElapsedTime: @ViewBag.RequestElapsedTime
+    </span>
+    </footer>
+    @RenderSection("footer", required: false)
+</body>
+</html>

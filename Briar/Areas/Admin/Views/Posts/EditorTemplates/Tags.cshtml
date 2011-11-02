@@ -1,0 +1,38 @@
+﻿@model List<Briar.Models.Tag>
+<script type="text/javascript">
+
+        var Tag = function(title, objectId) {
+            this.Title = title;
+            this.ObjectId = objectId;
+
+            this.remove = function(){
+                tagViewModel.tags.remove(this);
+            };
+        };
+
+        var tagItems = $.map(@Html.ToJson(Model), function(item){
+            return new Tag(item.Title, item.ObjectId);
+        });
+
+        var tagViewModel = {
+            tags : ko.observableArray(tagItems),
+            
+            addTag: function() {
+                var title = $('input[data-value="tag"]').val();
+                this.tags.push(new Tag(title));
+                $('input[data-value="tag"]').val('');
+            }
+        };                
+</script>
+<script id="tagTemplate" type="text/x-jquery-tmpl">
+    <li>
+        <strong data-bind="text: Title"></strong>
+        <input type="hidden" data-bind="value: Title, attr: { name: 'Tags[' + ko.utils.arrayIndexOf(tagViewModel.tags, $data) + '].Title' }"  />
+        <input type="hidden" data-bind="value: ObjectId, attr: { name: 'Tags[' + ko.utils.arrayIndexOf(tagViewModel.tags, $data) + '].Id' }" />        
+        <a data-bind="click: remove" data-action="delete">x</a>
+    </li>
+</script>
+<ul data-type="tags" data-bind="template: {name:'tagTemplate', foreach: tags}">    
+</ul>
+<input type="text" data-value="tag" />&nbsp;
+<button data-bind="click: addTag">@Display.AddTag</button>

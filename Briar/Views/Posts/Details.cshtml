@@ -1,0 +1,27 @@
+﻿@model Briar.Models.Post
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="post">
+    <header>
+        <h2>@Html.ActionLink(Model.Title, "Details", new { @title = Model.TitleTransliterated }, new { @title = Model.Title })</h2>
+    </header>
+    <p class="description">
+        @Model.Description
+    </p>
+    <div class="content">
+        @MvcHtmlString.Create(Model.Body)
+    </div>
+    <footer>
+        @Display.PostedOn: <span>@Model.PublishedOn</span>|
+        @{
+            Html.RenderPartial("_PostsCategories", Model.Categories);
+        }
+        |
+        @{
+            Html.RenderPartial("_PostsTags", Model.Tags);
+        }
+    </footer>
+</article>

@@ -1,0 +1,39 @@
+﻿@model Briar.Models.User
+@Html.ValidationSummary(true)
+<fieldset>
+    <ul>        
+        <li class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </li>
+        <li class="editor-label">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </li>
+        @if (Model.IsNew)
+        {
+            <li class="editor-label">
+                @Html.LabelFor(model => model.Password)
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </li>
+            <li class="editor-label">
+                @Html.LabelFor(model => model.PasswordConfirmation)
+                @Html.EditorFor(model => model.PasswordConfirmation)
+                @Html.ValidationMessageFor(model => model.PasswordConfirmation)
+            </li>        
+        }
+        <li class="editor-label">
+            @Html.LabelFor(model => model.State)
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </li>
+        <li class="buttons">
+            @Html.Submit()
+            &nbsp;
+            @Html.ActionLinkToList()
+        </li>
+    </ul>
+</fieldset>

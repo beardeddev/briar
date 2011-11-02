@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.PageTitle</title>
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="description" content="@ViewBag.Description" />
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.min.js"></script>
+    @RenderSection("head",required:false)
+</head>
+<body>
+    <header>
+        <nav>
+         @Html.Menu("MainMenu")
+        </nav>
+    </header>
+    <div class="wrapper">
+        <section id="content">
+            @RenderBody()
+        </section>
+        <aside>
+        </aside>
+    </div>
+    <footer>
+    <span>
+        @Display.RequestElapsedTime: @ViewBag.RequestElapsedTime
+    </span>
+    </footer>
+    @RenderSection("footer", required: false)
+</body>
+</html>

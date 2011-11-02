@@ -1,0 +1,38 @@
+﻿@model List<Briar.Models.Category>
+<script type="text/javascript">
+
+        var Category = function(title, objectId) {
+            this.Title = title;
+            this.ObjectId = objectId;
+
+            this.remove = function(){
+                categoryViewModel.categories.remove(this);
+            };
+        };
+
+        var categoryItems = $.map(@Html.ToJson(Model), function(item){
+            return new Category(item.Title, item.ObjectId);
+        });
+
+        var categoryViewModel = {
+            categories : ko.observableArray(categoryItems),
+            
+            addCategory: function() {
+                var title = $('input[data-value="category"]').val();
+                this.categories.push(new Category(title));
+                $('input[data-value="category"]').val('');
+            }
+        };       
+</script>
+<script id="categoryTemplate" type="text/x-jquery-tmpl">
+    <li>
+        <strong data-bind="text: Title"></strong>
+        <input type="hidden" data-bind="value: Title, attr: { name: 'Categories[' + ko.utils.arrayIndexOf(categoryViewModel.categories, $data) + '].Title' }"  />
+        <input type="hidden" data-bind="value: ObjectId, attr: { name: 'Categories[' + ko.utils.arrayIndexOf(categoryViewModel.categories, $data) + '].Id' }" />        
+        <a data-bind="click: remove" data-action="delete">x</a>
+    </li>
+</script>
+<ul data-type="categories" data-bind="template: {name:'categoryTemplate', foreach: categories}">    
+</ul>
+<input type="text" data-value="category" />&nbsp;
+<button data-bind="click: addCategory">@Display.AddCategory</button>

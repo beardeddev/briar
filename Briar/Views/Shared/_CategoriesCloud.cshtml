@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Briar.ViewModels.Cloud>
+<h3>@Display.Categories</h3>
+<ul>
+@foreach (var item in Model)
+{
+    <li>
+        @Html.ActionLink(item.Title, "Details", "Categories", item.ToUrlParams() , new { @title = item.Title })
+    </li>
+}
+</ul>

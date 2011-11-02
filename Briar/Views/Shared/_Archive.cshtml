@@ -1,0 +1,10 @@
+﻿@model Briar.ViewModels.ArchiveCollection
+<h3>@Display.Archive</h3>
+<ul>
+@foreach (var item in Model)
+{
+    <li>
+        @Html.ActionLink(item.Title, "Details", "Archive", item.ToUrlParams(), new { @title = item.Title })
+    </li>
+}
+</ul>

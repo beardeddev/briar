@@ -1,0 +1,24 @@
+﻿@model Shamrock.Data.PagedCollection<Briar.Models.Post>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@foreach (var post in Model.Collection)
+{
+    <article class="post">
+        <header>
+            <h3>@Html.ActionLink(post.Title, "Details", "Posts", new { @title = post.TitleTransliterated }, new { @title = post.Title })</h3>
+        </header>
+        <p class="description">
+        </p>
+        <footer>
+            @Display.PostedOn: <span>@post.PublishedOn</span>|
+            @{
+    Html.RenderPartial("_PostsCategories", post.Categories);
+            }
+            |
+            @{
+    Html.RenderPartial("_PostsTags", post.Tags);
+            }
+        </footer>
+    </article>    
+}

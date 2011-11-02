@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Briar.Models.Tag>
+           
+@Display.Tags:
+<ul>
+@foreach (var tag in Model)
+{
+    <li>
+    @Html.ActionLink(tag.Title, "Details", "Tags", new { @url = tag.Url }, new { @title = tag.Title })
+    </li>
+}
+</ul>

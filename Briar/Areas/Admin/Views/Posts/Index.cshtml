@@ -1,0 +1,55 @@
+﻿@model Shamrock.Data.PagedCollection<Briar.Models.Post>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            PublishedOn
+        </th>        
+        <th>
+            State
+        </th>
+        <th>
+            CreatedOn
+        </th>
+        <th>
+            UpdatedOn
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Collection) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishedOn)
+        </td>
+        <td>
+            @Html.StatusImage(item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.ActionLinkToEdit(item)
+            <br/>
+            @Html.ActionLinkToView(item)
+            <br />
+            @Html.ActionLinkToDelete(item)
+        </td>
+    </tr>
+}
+</table>
+<br />
+@Html.ActionLinkToCreate()

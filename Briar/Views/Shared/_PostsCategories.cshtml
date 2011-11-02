@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Briar.Models.Category>
+           
+@Display.PostedUnder:
+<ul>
+@foreach (var category in Model)
+{
+    <li>
+    @Html.ActionLink(category.Title, "Details", "Categories", new { @url = category.Url }, new { @title = category.Title })
+    </li>
+}
+</ul>

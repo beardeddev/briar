@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Briar", "Briar\Briar.csproj", "{F333FE5E-7106-4F17-A22D-D230ED5A8923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shamrock", "..\..\shamrock\Shamrock.Core\Shamrock.csproj", "{F3A3B55B-B095-48D0-AC91-5F64D038F359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shamrock.Data", "..\..\shamrock\Shamrock.Data\Shamrock.Data.csproj", "{97A21A9F-D401-4210-8A19-121CC2024EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shamrock.Web.Mvc", "..\..\shamrock\Shamrock.Web.Mvc\Shamrock.Web.Mvc.csproj", "{48D8F10C-479A-490C-A199-A5039AF46B49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shamrock.Data.MongoExtensions", "..\..\shamrock\Shamrock.Data.MongoExtensions\Shamrock.Data.MongoExtensions.csproj", "{6753FB07-45CB-41CA-998A-B665A187F2EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shamrock.Web.Mvc.MongoSupport", "..\..\shamrock\Shamrock.Web.Mvc.MongoSupport\Shamrock.Web.Mvc.MongoSupport.csproj", "{7C041CA9-114C-4F27-BD12-F347F346A64C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F333FE5E-7106-4F17-A22D-D230ED5A8923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F333FE5E-7106-4F17-A22D-D230ED5A8923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F333FE5E-7106-4F17-A22D-D230ED5A8923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F333FE5E-7106-4F17-A22D-D230ED5A8923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A3B55B-B095-48D0-AC91-5F64D038F359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A3B55B-B095-48D0-AC91-5F64D038F359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A3B55B-B095-48D0-AC91-5F64D038F359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A3B55B-B095-48D0-AC91-5F64D038F359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A21A9F-D401-4210-8A19-121CC2024EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A21A9F-D401-4210-8A19-121CC2024EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A21A9F-D401-4210-8A19-121CC2024EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A21A9F-D401-4210-8A19-121CC2024EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D8F10C-479A-490C-A199-A5039AF46B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D8F10C-479A-490C-A199-A5039AF46B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D8F10C-479A-490C-A199-A5039AF46B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D8F10C-479A-490C-A199-A5039AF46B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6753FB07-45CB-41CA-998A-B665A187F2EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6753FB07-45CB-41CA-998A-B665A187F2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6753FB07-45CB-41CA-998A-B665A187F2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6753FB07-45CB-41CA-998A-B665A187F2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C041CA9-114C-4F27-BD12-F347F346A64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C041CA9-114C-4F27-BD12-F347F346A64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C041CA9-114C-4F27-BD12-F347F346A64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C041CA9-114C-4F27-BD12-F347F346A64C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
