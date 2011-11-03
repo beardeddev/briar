@@ -61,6 +61,24 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A post with a given title already exists.
+        /// </summary>
+        public static string NonUniquePostTitle {
+            get {
+                return ResourceManager.GetString("NonUniquePostTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A page with a given url already exists.
+        /// </summary>
+        public static string NotUniquePageUrl {
+            get {
+                return ResourceManager.GetString("NotUniquePageUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A user with that email address already exists.
         /// </summary>
         public static string NotUniqueUserEmailError {

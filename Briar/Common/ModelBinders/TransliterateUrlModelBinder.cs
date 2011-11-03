@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 using Briar.Common.Generalization;
 
@@ -11,7 +12,7 @@ using MongoDB.Bson;
 
 namespace Briar.Common.ModelBinders
 {
-    public class TransliterateUrlModelBinder : DefaultDocumentModelBinder
+    public class TransliterateUrlModelBinder : DefaultModelBinder
     {
         public override object BindModel(System.Web.Mvc.ControllerContext controllerContext, System.Web.Mvc.ModelBindingContext bindingContext)
         {

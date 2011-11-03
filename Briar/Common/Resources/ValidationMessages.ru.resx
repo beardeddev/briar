@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NonUniquePostTitle" xml:space="preserve">
+    <value>Запись с заданным заголовком уже существует</value>
+  </data>
+  <data name="NotUniquePageUrl" xml:space="preserve">
+    <value>Страница с заданной ссылкой уже существует</value>
+  </data>
   <data name="NotUniqueUserEmailError" xml:space="preserve">
     <value>Пользователь с таким адресом электронной почты уже существует</value>
   </data>

@@ -5,27 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 
 using Shamrock.Data;
+using Shamrock.Web.Mvc.ModelBinders;
 
 using MongoDB.Bson;
 
 namespace Briar.Common.ModelBinders
 {
-    public class DefaultDocumentModelBinder : DefaultModelBinder
+    public class DefaultDocumentModelBinder : EntityModelBinder
     {
-        /*
-        public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        protected override object CreateModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Type modelType)
         {
-            IEntity<ObjectId> model = (IEntity<ObjectId>)base.BindModel(controllerContext, bindingContext);
-
-            object modelId = controllerContext.RequestContext.RouteData.Values["id"];            
-            if(modelId != null)
+            IEntity<ObjectId> model = (IEntity<ObjectId>)base.CreateModel(controllerContext, bindingContext, modelType);
+            if (controllerContext.RequestContext.RouteData.Values["id"] != null)
             {
-                
-                model.Id = new ObjectId(modelId.ToString());
+                model.Id = new ObjectId(controllerContext.RequestContext.RouteData.Values["id"].ToString());
             }
-
             return model;
         }
-         * */
     }
 }

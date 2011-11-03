@@ -10,7 +10,7 @@ using Briar.Common.ModelBinders;
 
 namespace Briar.Common.Data
 {
-    //[ModelBinder(typeof(DefaultDocumentModelBinder))]
+    [ModelBinder(typeof(DefaultDocumentModelBinder))]
     public class DocumentBase<T> : Document<T>
         where T : DocumentBase<T>, new()
     {

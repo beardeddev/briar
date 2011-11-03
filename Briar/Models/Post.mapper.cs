@@ -91,14 +91,16 @@ namespace Briar.Models
             return FindPaged(query, offset, limit);
         }
 
+        public static Post FindByTitle(IMongoQuery query, string title)
+        {
+            return Post.Collection.FindOne(Query.And(query,
+                    Query.EQ("Title", new BsonString(title))
+                ));
+        }
+
         public static Post FindByTitle(string title)
         {
-            
-            IMongoQuery query = Query.And(Post.ActiveScope, 
-                    Query.EQ("Title", new BsonString(title))
-                );
-
-            return Post.Collection.FindOne(query);
+            return FindByTitle(Post.ActiveScope, title);
         }
 
         public static List<Cloud> GetCategoriesCloud()

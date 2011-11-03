@@ -23,15 +23,18 @@ namespace Briar.Models
             }
         }
 
-        public static Page FindByUrl(string url)
-        {            
+        public static Page FindByUrl(IMongoQuery query, string url)
+        {
             BsonValue bsonUrl = new BsonString(url);
 
-            IMongoQuery query = Query.And(Page.ActiveScope,
-                    Query.EQ("Url", bsonUrl)
+            return Page.Collection.FindOne(Query.And(query,
+                Query.EQ("Url", bsonUrl))
                 );
+        }
 
-            return Page.Collection.FindOne(query);
+        public static Page FindByUrl(string url)
+        {
+            return Page.FindByUrl(Page.ActiveScope, url);
         }
 
         public static List<Page> GetMenu()
