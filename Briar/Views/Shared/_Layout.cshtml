@@ -13,8 +13,12 @@
 </head>
 <body>
     <header>
+        <hgroup>
+		    <h1><a href="/">@Request.Url.Host</a></h1>
+		    <h2>@Display.WebSiteSlogan</h2>
+	    </hgroup>
         <nav>
-            @Html.Menu("MainMenu")
+         @Html.Menu("MainMenu")
         </nav>
     </header>
     <div class="wrapper">

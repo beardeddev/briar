@@ -275,5 +275,23 @@ namespace Briar.Common.Resources {
                 return ResourceManager.GetString("View", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to beardeddev.pp.ua.
+        /// </summary>
+        public static string WebSiteName {
+            get {
+                return ResourceManager.GetString("WebSiteName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ....
+        /// </summary>
+        public static string WebSiteSlogan {
+            get {
+                return ResourceManager.GetString("WebSiteSlogan", resourceCulture);
+            }
+        }
     }
 }

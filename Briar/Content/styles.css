@@ -24,6 +24,39 @@ time, mark, audio, video {
 header, footer, section, nav, aside
 {
     display: block;
+    clear: both;
+}
+
+a 
+{
+    color: #7ACE11;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+h4 {
+	font-size: 1.125em;
+	font-variant: normal;
+}
+
+h5 {
+	font-size: 0.875em;
+}
+
+h6 {
+	font-size: 0.813em;
 }
 
 /* layout */
@@ -34,6 +67,19 @@ header, footer, section, nav, aside
     margin: 0 auto;
     width: 1024px;
     font-size: 0.87em;
+    position: relative;
+    top: -40px;
+    background: #fff;
+    border-left: 2px solid #EEE;
+    border-top: 3px solid #EEE;
+    border-radius
+}
+
+.wrapper 
+{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	box-shadow: 0px 0px 0px #161617;
 }
 
 .wrapper section, .wrapper aside
@@ -43,7 +89,8 @@ header, footer, section, nav, aside
 
 .wrapper section
 {
-    width: 700px;
+    padding: 20px 15px;
+    width: 700px;    
 }
 
 .wrapper aside
@@ -51,8 +98,174 @@ header, footer, section, nav, aside
     width: 280px;
 }
 
-/* tables */
-table 
-{
-    width: 100%;
+/* header */
+header {
+	width: 100%;
+	height: 139px;
+	margin: 0 auto;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: #1D1D1D url(../Images/bg.jpg);
+	border-bottom: 1px solid #111;
+	margin: 1px;
 }
+
+/* header site title and slogan */
+
+header hgroup 
+{
+    position: relative;
+	top: 30px;
+	left: 80px;
+}
+
+header hgroup h1, header hgroup h2
+	float: left;
+	margin: 0 !important;
+	text-transform: lowercase;
+}
+
+header hgroup h1 {
+	padding-left: 10px;
+	text-align: center;
+	font-size: 3.2em;
+	color: #FFFFFF;
+}
+
+header hgroup h1 a {
+	color: #FFFFFF;
+}
+
+header hgroup h2 {
+	padding-top: 10px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+header hgroup h2 a, #logo p a {
+	letter-spacing: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+header hgroup a {
+	text-decoration: none;
+}
+
+/* main navigation */
+
+header nav {
+	float: right;	
+	z-index: 100;
+	position: relative;
+}
+
+header nav ul {
+	margin: 0;
+	list-style: none;
+}
+
+header nav li {
+	display: inline;
+}
+
+header nav a {
+	display: block;
+	float: left;
+	margin-right: 45px;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #7ACE11;
+}
+
+
+header nav a:hover, header nav .active a {
+	border-bottom: 2px solid #7ACE11;
+}
+
+/* content */
+#content 
+{
+    padding: 15px;
+}
+
+#content h1, #content h2
+{
+    margin: 10px 0px 15px 0px;
+}
+
+/* buttons */
+a.button {
+	display: block;
+	float: left;
+	background: #000 url(../Images/bg.gif);
+	margin-right: 10px;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+/* tables */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0;
+}
+
+thead th {
+	text-shadow: 1px 1px 1px #EEE;
+	background-color: #FFF;
+	border-top: 5px double #7ACE11;
+	border-bottom: 5px double #7ACE11;
+	padding: 12px 10px;
+	color: #2C902B;
+	text-align: left;
+	letter-spacing: 0.1em;
+	white-space: nowrap;
+	font-variant: small-caps;
+}
+
+tbody td {
+	border-bottom: 1px solid #ccc;
+	padding: 2px 10px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+tbody td img
+{
+    margin: 0 auto;
+    float: left;
+}
+
+tbody tr:hover, tr.even:hover{
+	background: #D4FFD4;
+}
+
+tbody tr.even {
+	background: #f2f2f2;
+}
+
+tbody td a.button 
+{
+    padding: 1px 5px;
+    width: 75px;
+    float: right;
+    margin: 1px 0;
+}
+
+tbody tr td:last
+{
+    padding: 1px;
+}
+
+/* footer */
+footer { width:100%; margin:0 auto; padding:10px 0; height: 75px; }
+footer p { text-align:center; font:normal 11px  Arial, Helvetica, sans-serif; color:#a1a1a1;}
+footer a { color:#c6c6c6; text-decoration:none;}
+footer {padding:0;  margin:0 auto;  background:#1d1d1d; border-top:1px solid #111; }

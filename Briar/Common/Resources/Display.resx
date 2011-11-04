@@ -189,4 +189,10 @@
   <data name="View" xml:space="preserve">
     <value>View</value>
   </data>
+  <data name="WebSiteName" xml:space="preserve">
+    <value>beardeddev.pp.ua</value>
+  </data>
+  <data name="WebSiteSlogan" xml:space="preserve">
+    <value>...</value>
+  </data>
 </root>

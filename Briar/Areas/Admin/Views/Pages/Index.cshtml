@@ -3,6 +3,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <table>
+    <thead>
     <tr>
         <th>
             Url
@@ -21,7 +22,9 @@
         </th>
         <th></th>
     </tr>
+    </thead>
 @foreach (var item in Model.Collection) {
+    <tbody>
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Url)
@@ -46,6 +49,7 @@
             @Html.ActionLinkToDelete(item)
         </td>
     </tr>
+    </tbody>
 }
 </table>
 <br />

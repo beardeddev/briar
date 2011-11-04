@@ -131,6 +131,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\styles.css" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\bg.jpg" />
     <Content Include="Images\Status\True.png" />
     <Content Include="Images\Status\False.png" />
     <Content Include="Scripts\Admin\posts.utils.js" />

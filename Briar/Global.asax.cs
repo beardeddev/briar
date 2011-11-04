@@ -15,6 +15,8 @@ using Shamrock.Web.Mvc.ActionFilters;
 
 using FluentValidation;
 using FluentValidation.Mvc;
+using Shamrock.Data.MongoExtensions;
+using Briar.Models;
 
 namespace Briar
 {
@@ -104,6 +106,29 @@ namespace Briar
 
             ModelBinders.Binders.Add(typeof(BsonObjectId), new BsonObjectIdBinder());
             ModelBinders.Binders.Add(typeof(ObjectId), new ObjectIdBinder());
+
+            SetUpMongo();
+        }
+
+        protected void SetUpMongo()
+        {
+            Mongo connection = new Mongo();
+            
+            if (!connection.Database.CollectionExists("pages"))
+            {
+                connection.Database.CreateCollection("pages");
+            }
+
+            if (!connection.Database.CollectionExists("posts"))
+            {
+                connection.Database.CreateCollection("posts");
+            }
+
+            if (!connection.Database.CollectionExists("users"))
+            {
+                connection.Database.CreateCollection("users");
+            }
+
         }
     }
 }
