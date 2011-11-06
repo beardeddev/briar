@@ -21,7 +21,7 @@ namespace Briar.Controllers
 
         public ActionResult Details(string title)
         {
-            Post post = Post.FindByTitle(title);
+            Post post = Post.FindByTitleTransliterated(title);
             return ObjectOr404(post);
         }
 

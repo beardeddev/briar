@@ -13,26 +13,31 @@
 <body>
     <header>
         <hgroup>
-		    <h1><a href="/">@Request.Url.Host</a></h1>
-		    <h2>@Display.WebSiteSlogan</h2>
-	    </hgroup>
-        <nav>
-         @Html.Menu("MainMenu")
-        </nav>
+            <h1>
+                <a href="/">@Request.Url.Host</a></h1>
+            <h2>@Display.WebSiteSlogan</h2>
+        </hgroup>
     </header>
-    <div class="wrapper">
-        <section id="content">
-            <h2>@ViewBag.Title</h2>
-            @RenderBody()
-        </section>
-        <aside>
-        </aside>
+    <nav>
+        @Html.Menu("MainMenu")
+    </nav>
+    <div class="transition">
+        <div id="container">
+            <div class="content-box">
+                <h2>@ViewBag.Title</h2>
+                <div class="inner">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
-    <span>
-        @Display.RequestElapsedTime: @ViewBag.RequestElapsedTime
-    </span>
+        <div>
+            <p>
+                &copy; beardeddev.pp.ua 2011. Website Design by <a href="http://beardeddev.pp.ua">Beardeddev</a>
+                | @Display.RequestElapsedTime: @ViewBag.RequestElapsedTime</p>
+        </div>
     </footer>
-    @RenderSection("footer", required: false)
+    @RenderSection("footer", false)
 </body>
 </html>

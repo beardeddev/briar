@@ -59,6 +59,7 @@ namespace Briar.Models
         /// <summary>
         /// Wraps Body column
         /// </summary>
+        [UIHint("Body")]
         public string Body { get; set; }
 
         /// <summary>

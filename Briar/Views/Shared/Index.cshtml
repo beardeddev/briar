@@ -2,23 +2,31 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @foreach (var post in Model.Collection)
 {
     <article class="post">
         <header>
-            <h3>@Html.ActionLink(post.Title, "Details", "Posts", new { @title = post.TitleTransliterated }, new { @title = post.Title })</h3>
+            <h2>
+                @Html.ActionLink(post.Title, "Details", "Posts", new { @title = post.TitleTransliterated }, new { @title = post.Title })
+            </h2>
+            <span>@Display.PostedOn:
+                <time datetime="@post.PublishedOn.ToLongDateString()">@post.PublishedOn.ToString("dd MMM yyyy")</time>
+            </span>
         </header>
-        <p class="description">
+        <p>
+            @post.Description
         </p>
         <footer>
-            @Display.PostedOn: <span>@post.PublishedOn</span>|
-            @{
+		    @{
     Html.RenderPartial("_PostsCategories", post.Categories);
             }
-            |
+            <br />
             @{
     Html.RenderPartial("_PostsTags", post.Tags);
             }
-        </footer>
-    </article>    
+		    <br>
+		    @Html.ActionLink(@Display.ReadMore, "Details", "Posts", new { @title = post.TitleTransliterated }, new { @title = post.Title, @class = "readmore" })
+	    </footer>
+    </article>
 }

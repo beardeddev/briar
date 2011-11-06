@@ -214,6 +214,15 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Read more.
+        /// </summary>
+        public static string ReadMore {
+            get {
+                return ResourceManager.GetString("ReadMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Request elapsed time.
         /// </summary>
         public static string RequestElapsedTime {
@@ -228,6 +237,15 @@ namespace Briar.Common.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tagged Under.
+        /// </summary>
+        public static string TaggedUnder {
+            get {
+                return ResourceManager.GetString("TaggedUnder", resourceCulture);
             }
         }
         

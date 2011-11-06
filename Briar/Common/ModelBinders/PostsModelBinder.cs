@@ -17,7 +17,7 @@ namespace Briar.Common.ModelBinders
             Post post = (Post)base.BindModel(controllerContext, bindingContext);
             if (string.IsNullOrEmpty(post.TitleTransliterated))
             {
-                post.TitleTransliterated = post.Title.Transliterate();
+                post.TitleTransliterated = post.Title.Trim().Transliterate();
             }
             return post;
         }

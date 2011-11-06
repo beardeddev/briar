@@ -46,7 +46,7 @@ namespace Briar
             routes.MapRoute(
                 "Post", // Route name
                 "posts/{title}", // URL with parameters
-                new { controller = "Posts", action = "Details" }, // Parameter defaults
+                new { controller = "Posts", action = "Details", title = ".*" }, // Parameter defaults
                 new string[] { "Briar.Controllers" }
             );
 

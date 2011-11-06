@@ -168,11 +168,17 @@
   <data name="Posts" xml:space="preserve">
     <value>Posts</value>
   </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read more</value>
+  </data>
   <data name="RequestElapsedTime" xml:space="preserve">
     <value>Request elapsed time</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="TaggedUnder" xml:space="preserve">
+    <value>Tagged Under</value>
   </data>
   <data name="Tags" xml:space="preserve">
     <value>Tags</value>

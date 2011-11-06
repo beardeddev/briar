@@ -103,6 +103,18 @@ namespace Briar.Models
             return FindByTitle(Post.ActiveScope, title);
         }
 
+        public static Post FindByTitleTransliterated(IMongoQuery query, string title)
+        {
+            return Post.Collection.FindOne(Query.And(query,
+                    Query.EQ("TitleTransliterated", new BsonString(title))
+                ));
+        }
+
+        public static Post FindByTitleTransliterated(string title)
+        {
+            return FindByTitleTransliterated(Post.ActiveScope, title);
+        }
+
         public static List<Cloud> GetCategoriesCloud()
         {
             BsonJavaScript map = new BsonJavaScript(@"

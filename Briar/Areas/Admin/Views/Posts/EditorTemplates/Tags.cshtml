@@ -29,10 +29,10 @@
         <strong data-bind="text: Title"></strong>
         <input type="hidden" data-bind="value: Title, attr: { name: 'Tags[' + ko.utils.arrayIndexOf(tagViewModel.tags, $data) + '].Title' }"  />
         <input type="hidden" data-bind="value: ObjectId, attr: { name: 'Tags[' + ko.utils.arrayIndexOf(tagViewModel.tags, $data) + '].Id' }" />        
-        <a data-bind="click: remove" data-action="delete">x</a>
+        <a data-bind="click: remove" data-action="delete" class="rm"><img src="/images/bullet_delete.png" alt="@Display.Delete" title="@Display.Delete" /></a>
     </li>
 </script>
-<ul data-type="tags" data-bind="template: {name:'tagTemplate', foreach: tags}">    
+<ul data-type="tags" data-bind="template: {name:'tagTemplate', foreach: tags}">        
 </ul>
-<input type="text" data-value="tag" />&nbsp;
+<input type="text" data-value="tag" class="small" />&nbsp;
 <button data-bind="click: addTag">@Display.AddTag</button>

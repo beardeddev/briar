@@ -25,5 +25,29 @@ namespace Briar.Common.Metadata
         /// </summary>
         [UIHint("Tags")]
         public List<Tag> Tags { get; set; }
+
+        /// <summary>
+        /// Wraps Keywords column
+        /// </summary>
+        [DataType(DataType.MultilineText)]
+        public string Keywords { get; set; }
+
+        /// <summary>
+        /// Wraps Description column
+        /// </summary>
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Wraps PublishedOn column
+        /// </summary>
+        [DataType(DataType.DateTime)]
+        public DateTime PublishedOn { get; set; }
+
+        /// <summary>
+        /// Wraps Body column
+        /// </summary>
+        [DataType(DataType.MultilineText)]
+        public string Body { get; set; }
     }
 }

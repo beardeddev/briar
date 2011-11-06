@@ -120,11 +120,20 @@
   <data name="Email" xml:space="preserve">
     <value>Электронный адресс</value>
   </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Страницы</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>
   <data name="PasswordConfirmation" xml:space="preserve">
     <value>Подтверждение пароля</value>
+  </data>
+  <data name="PostedOn" xml:space="preserve">
+    <value>Добавлено</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Посты</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>Логин</value>

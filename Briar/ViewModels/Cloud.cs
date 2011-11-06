@@ -27,7 +27,7 @@ namespace Briar.ViewModels
         {
             get
             {
-                return string.Format("{0} {1}", this._id.Title, this.value.count);
+                return string.Format("{0} ({1})", this._id.Title, this.value.count);
             }
         }
 

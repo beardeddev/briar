@@ -1,27 +1,39 @@
 ﻿@model Briar.Models.Post
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <article class="post">
     <header>
+        <span>@Display.PostedOn:
+            <time datetime="@Model.PublishedOn.ToLongDateString()">@Model.PublishedOn.ToString("dd MMM yyyy")</time>
+        </span>
         <h2>@Html.ActionLink(Model.Title, "Details", new { @title = Model.TitleTransliterated }, new { @title = Model.Title })</h2>
-    </header>
+    </header>    
     <p class="description">
         @Model.Description
     </p>
     <div class="content">
         @MvcHtmlString.Create(Model.Body)
     </div>
-    <footer>
-        @Display.PostedOn: <span>@Model.PublishedOn</span>|
+    <footer>        
         @{
             Html.RenderPartial("_PostsCategories", Model.Categories);
         }
-        |
+        <br />
         @{
             Html.RenderPartial("_PostsTags", Model.Tags);
         }
     </footer>
 </article>
+
+@section head{
+    <script src="@Url.Content("~/Static/syntaxhighlighter/scripts/shCore.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Static/syntaxhighlighter/scripts/shAutoloader.js")" type="text/javascript"></script>   
+
+    <link href="@Url.Content("~/Static/syntaxhighlighter/styles/shCore.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Static/syntaxhighlighter/styles/shThemeDefault.css")" rel="stylesheet" type="text/css" />
+}
+
+@section footer{
+    <script src="@Url.Content("~/Scripts/sh.js")" type="text/javascript"></script>
+}
