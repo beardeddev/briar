@@ -1,28 +1,6 @@
 ﻿@model List<Briar.Models.Tag>
 <script type="text/javascript">
-
-        var Tag = function(title, objectId) {
-            this.Title = title;
-            this.ObjectId = objectId;
-
-            this.remove = function(){
-                tagViewModel.tags.remove(this);
-            };
-        };
-
-        var tagItems = $.map(@Html.ToJson(Model), function(item){
-            return new Tag(item.Title, item.ObjectId);
-        });
-
-        var tagViewModel = {
-            tags : ko.observableArray(tagItems),
-            
-            addTag: function() {
-                var title = $('input[data-value="tag"]').val();
-                this.tags.push(new Tag(title));
-                $('input[data-value="tag"]').val('');
-            }
-        };                
+    var tagsJson = @Html.ToJson(Model);                        
 </script>
 <script id="tagTemplate" type="text/x-jquery-tmpl">
     <li>

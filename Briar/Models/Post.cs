@@ -29,6 +29,18 @@ namespace Briar.Models
     public partial class Post : DocumentBase<Post>
     {
         /// <summary>
+        /// Create new Post document instance with
+        /// default datetime set to now.
+        /// </summary>
+        public Post()
+        {
+            if (this.PublishedOn == default(DateTime))
+            {
+                this.PublishedOn = DateTime.Now;
+            }
+        }
+
+        /// <summary>
         /// Wraps Id column
         /// </summary>        
         public BsonObjectId Id { get; set; }

@@ -5,10 +5,19 @@
     <title>@ViewBag.PageTitle</title>
     <meta name="keywords" content="@ViewBag.Keywords" />
     <meta name="description" content="@ViewBag.Description" />
-    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+        
     <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-timepicker-addon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/dashboard.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.gritter.min.js")"></script>
+    
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/eggplant/jquery-ui.css" />        
     @RenderSection("head", required: false)
+
+    @Html.GritterFlashMessages();
 </head>
 <body>
     <header>

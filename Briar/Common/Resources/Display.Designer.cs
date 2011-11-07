@@ -97,6 +97,15 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string Body {
+            get {
+                return ResourceManager.GetString("Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         public static string Categories {
@@ -115,11 +124,29 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created on.
+        /// </summary>
+        public static string CreatedOn {
+            get {
+                return ResourceManager.GetString("CreatedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -151,11 +178,56 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string Id {
+            get {
+                return ResourceManager.GetString("Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image url.
+        /// </summary>
+        public static string ImageSource {
+            get {
+                return ResourceManager.GetString("ImageSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keywords.
+        /// </summary>
+        public static string Keywords {
+            get {
+                return ResourceManager.GetString("Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout file path.
+        /// </summary>
+        public static string LayoutPath {
+            get {
+                return ResourceManager.GetString("LayoutPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main Menu.
         /// </summary>
         public static string MainMenu {
             get {
                 return ResourceManager.GetString("MainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Object Id.
+        /// </summary>
+        public static string ObjectId {
+            get {
+                return ResourceManager.GetString("ObjectId", resourceCulture);
             }
         }
         
@@ -187,7 +259,7 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Posted On.
+        ///   Looks up a localized string similar to Posted on.
         /// </summary>
         public static string PostedOn {
             get {
@@ -210,6 +282,15 @@ namespace Briar.Common.Resources {
         public static string Posts {
             get {
                 return ResourceManager.GetString("Posts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Published on.
+        /// </summary>
+        public static string PublishedOn {
+            get {
+                return ResourceManager.GetString("PublishedOn", resourceCulture);
             }
         }
         
@@ -241,7 +322,25 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tagged Under.
+        ///   Looks up a localized string similar to Show link in menu.
+        /// </summary>
+        public static string ShowInMenu {
+            get {
+                return ResourceManager.GetString("ShowInMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string State {
+            get {
+                return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tagged under.
         /// </summary>
         public static string TaggedUnder {
             get {
@@ -259,11 +358,38 @@ namespace Briar.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         public static string True {
             get {
                 return ResourceManager.GetString("True", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated on.
+        /// </summary>
+        public static string UpdatedOn {
+            get {
+                return ResourceManager.GetString("UpdatedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Url.
+        /// </summary>
+        public static string Url {
+            get {
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
         

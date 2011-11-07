@@ -129,14 +129,23 @@
   <data name="BackToList" xml:space="preserve">
     <value>Back to List</value>
   </data>
+  <data name="Body" xml:space="preserve">
+    <value>Body</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Created on</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
@@ -147,8 +156,23 @@
   <data name="False" xml:space="preserve">
     <value>Disabled</value>
   </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ImageSource" xml:space="preserve">
+    <value>Image url</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="LayoutPath" xml:space="preserve">
+    <value>Layout file path</value>
+  </data>
   <data name="MainMenu" xml:space="preserve">
     <value>Main Menu</value>
+  </data>
+  <data name="ObjectId" xml:space="preserve">
+    <value>Object Id</value>
   </data>
   <data name="Pages" xml:space="preserve">
     <value>Pages</value>
@@ -160,13 +184,16 @@
     <value>Password confirmation</value>
   </data>
   <data name="PostedOn" xml:space="preserve">
-    <value>Posted On</value>
+    <value>Posted on</value>
   </data>
   <data name="PostedUnder" xml:space="preserve">
     <value>Posted under</value>
   </data>
   <data name="Posts" xml:space="preserve">
     <value>Posts</value>
+  </data>
+  <data name="PublishedOn" xml:space="preserve">
+    <value>Published on</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>Read more</value>
@@ -177,14 +204,29 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="ShowInMenu" xml:space="preserve">
+    <value>Show link in menu</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
   <data name="TaggedUnder" xml:space="preserve">
-    <value>Tagged Under</value>
+    <value>Tagged under</value>
   </data>
   <data name="Tags" xml:space="preserve">
     <value>Tags</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
   <data name="True" xml:space="preserve">
     <value>Active</value>
+  </data>
+  <data name="UpdatedOn" xml:space="preserve">
+    <value>Updated on</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>Login</value>

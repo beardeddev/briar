@@ -4,52 +4,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<table>
-    <tr>
-        <th>
-            Title
-        </th>
-        <th>
-            PublishedOn
-        </th>        
-        <th>
-            State
-        </th>
-        <th>
-            CreatedOn
-        </th>
-        <th>
-            UpdatedOn
-        </th>
-        <th></th>
-    </tr>
+@Html.Grid(Model.Collection).Columns(column => {
+    column.For(item => item.Id);
+    column.For(item => item.Title);
+    column.For(item => item.PublishedOn);
+    column.For(item => Html.StateImage(item.State)).Named(Display.State);
+    column.For(item => item.CreatedOn);
+    column.For(item => item.UpdatedOn);
+    column.For(item => Html.GridActionLinks(item)).Encode(false);
+})
 
-@foreach (var item in Model.Collection) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishedOn)
-        </td>
-        <td>
-            @Html.StatusImage(item.State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpdatedOn)
-        </td>
-        <td>
-            @Html.ActionLinkToEdit(item)
-            <br/>
-            @Html.ActionLinkToView(item)
-            <br />
-            @Html.ActionLinkToDelete(item)
-        </td>
-    </tr>
-}
-</table>
 <br />
 @Html.ActionLinkToCreate()

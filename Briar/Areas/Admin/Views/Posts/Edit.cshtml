@@ -11,22 +11,7 @@
     <script type="text/javascript" src="http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-1.2.1.js"></script>
 
     <script type="text/javascript" src="@Url.Content("~/Static/tiny_mce/tiny_mce.js")"></script>
-    <script type="text/javascript">
-        tinyMCE.init({
-            // elment options
-            mode: "exact",
-            elements: "Body",
-            theme: "advanced",
-
-            //Theme options
-            theme_advanced_toolbar_location : "top",
-            theme_advanced_toolbar_align : "left",
-            theme_advanced_statusbar_location : "bottom",
-
-            // Content CSS
-            content_css : "@Url.Content("~/Content/styles.css")"
-        }); 
-    </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tiny_mce_init.js")"></script>
 }
 
 @using (Html.BeginForm()) {

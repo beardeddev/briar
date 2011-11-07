@@ -1,28 +1,6 @@
 ﻿@model List<Briar.Models.Category>
 <script type="text/javascript">
-
-        var Category = function(title, objectId) {
-            this.Title = title;
-            this.ObjectId = objectId;
-
-            this.remove = function(){
-                categoryViewModel.categories.remove(this);
-            };
-        };
-
-        var categoryItems = $.map(@Html.ToJson(Model), function(item){
-            return new Category(item.Title, item.ObjectId);
-        });
-
-        var categoryViewModel = {
-            categories : ko.observableArray(categoryItems),
-            
-            addCategory: function() {
-                var title = $('input[data-value="category"]').val();
-                this.categories.push(new Category(title));
-                $('input[data-value="category"]').val('');
-            }
-        };       
+        var categoriesJson = @Html.ToJson(Model);               
 </script>
 <script id="categoryTemplate" type="text/x-jquery-tmpl">
     <li>
