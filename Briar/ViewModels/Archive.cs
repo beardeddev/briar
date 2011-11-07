@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Briar.ViewModels
 {
@@ -16,10 +17,16 @@ namespace Briar.ViewModels
             this.Count = document.GetValue("count").AsDouble;
         }
 
+        [BsonElement("year")]
         public int Year { get; set; }
+
+        [BsonElement("month")]
         public int Month { get; set; }
+
+        [BsonElement("count")]
         public Double Count { get; set; }
 
+        [BsonIgnore]
         public string Title
         {
             get

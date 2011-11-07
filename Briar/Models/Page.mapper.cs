@@ -19,7 +19,7 @@ namespace Briar.Models
         {
             get
             {
-                return Query.EQ("State", BsonBoolean.True);
+                return Query.EQ("state", BsonBoolean.True);
             }
         }
 
@@ -28,7 +28,7 @@ namespace Briar.Models
             BsonValue bsonUrl = new BsonString(url);
 
             return Page.Collection.FindOne(Query.And(query,
-                Query.EQ("Url", bsonUrl))
+                Query.EQ("url", bsonUrl))
                 );
         }
 
@@ -40,7 +40,7 @@ namespace Briar.Models
         public static List<Page> GetMenu()
         {
             IMongoQuery query = Query.And(Page.ActiveScope,
-                    Query.EQ("ShowInMenu", BsonBoolean.True)
+                    Query.EQ("show_in_menu", BsonBoolean.True)
                 );
 
             return Page.Collection.Find(query).ToList();

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 using Briar.Common.ModelBinders;
 using Briar.Common.Metadata;
@@ -27,16 +28,19 @@ namespace Briar.Models
         /// <summary>
         /// Wraps Title column
         /// </summary>
+        [BsonElement("title")]
         public string Title { get; set; }
 
         /// <summary>
         /// Wraps Url column
         /// </summary>
+        [BsonElement("url")]
         public string Url { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [BsonIgnore]
         public string ObjectId
         {
             get

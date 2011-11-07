@@ -136,7 +136,6 @@
     <Content Include="Images\Status\True.png" />
     <Content Include="Images\Status\False.png" />
     <Content Include="Images\tag_blue_delete.png" />
-    <Content Include="Scripts\Admin\posts.utils.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\sh.js" />
@@ -453,6 +452,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Scripts\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -19,11 +19,11 @@
         </p>
         <footer>
 		    @{
-    Html.RenderPartial("_PostsCategories", post.Categories);
+                Html.RenderPartial("_PostsCategories", post.Categories);
             }
             <br />
             @{
-    Html.RenderPartial("_PostsTags", post.Tags);
+                Html.RenderPartial("_PostsTags", post.Tags);
             }
 		    <br>
 		    @Html.ActionLink(@Display.ReadMore, "Details", "Posts", new { @title = post.TitleTransliterated }, new { @title = post.Title, @class = "readmore" })

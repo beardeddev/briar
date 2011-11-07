@@ -22,8 +22,8 @@ namespace Briar.Models
         {
             get
             {
-                return Query.And(Query.EQ("State", BsonBoolean.True),
-                    Query.LTE("PublishedOn", DateTime.Now)
+                return Query.And(Query.EQ("state", BsonBoolean.True),
+                    Query.LTE("published_on", DateTime.Now)
                     );
             }
         }
@@ -33,7 +33,7 @@ namespace Briar.Models
             get
             {
                 SortByBuilder sortBy = new SortByBuilder();
-                sortBy.Descending(new string[] { "PublishedOn" });
+                sortBy.Descending(new string[] { "published_on" });
                 return sortBy;
             }
         }
@@ -63,7 +63,7 @@ namespace Briar.Models
         {
 
             IMongoQuery query = Query.And(Post.ActiveScope,
-                    Query.EQ("Categories.Url", new BsonString(categoryUrl))
+                    Query.EQ("categories.url", new BsonString(categoryUrl))
                 );
 
             return FindPaged(query, offset, limit);
@@ -72,7 +72,7 @@ namespace Briar.Models
         public static PagedCollection<Post> FindPagedByTag(string tagUrl, int offset, int limit)
         {
             IMongoQuery query = Query.And(Post.ActiveScope,
-                    Query.EQ("Tags.Url", new BsonString(tagUrl))
+                    Query.EQ("tags.url", new BsonString(tagUrl))
                 );
 
             return FindPaged(query, offset, limit);
@@ -83,9 +83,9 @@ namespace Briar.Models
             DateTime startDate = new DateTime(year, month, 1);
             DateTime endDate = new DateTime(year, month, DateTime.DaysInMonth(year, month));
 
-            IMongoQuery query = Query.And(Query.EQ("State", BsonBoolean.True),
-                    Query.GTE("PublishedOn", new BsonDateTime(startDate)),
-                    Query.LTE("PublishedOn", new BsonDateTime(endDate))
+            IMongoQuery query = Query.And(Query.EQ("state", BsonBoolean.True),
+                    Query.GTE("published_on", new BsonDateTime(startDate)),
+                    Query.LTE("published_on", new BsonDateTime(endDate))
                 );
 
             return FindPaged(query, offset, limit);
@@ -94,7 +94,7 @@ namespace Briar.Models
         public static Post FindByTitle(IMongoQuery query, string title)
         {
             return Post.Collection.FindOne(Query.And(query,
-                    Query.EQ("Title", new BsonString(title))
+                    Query.EQ("title", new BsonString(title))
                 ));
         }
 
@@ -106,7 +106,7 @@ namespace Briar.Models
         public static Post FindByTitleTransliterated(IMongoQuery query, string title)
         {
             return Post.Collection.FindOne(Query.And(query,
-                    Query.EQ("TitleTransliterated", new BsonString(title))
+                    Query.EQ("title_transliterated", new BsonString(title))
                 ));
         }
 
@@ -119,14 +119,14 @@ namespace Briar.Models
         {
             BsonJavaScript map = new BsonJavaScript(@"
                 function () {
-                    if (!this.Categories) {
+                    if (!this.categories) {
                         return;
                     }
 
-                    for (index in this.Categories) {
+                    for (index in this.categories) {
                         emit({
-                            Title: this.Categories[index].Title,
-                            Url: this.Categories[index].Url
+                            title: this.categories[index].title,
+                            url: this.categories[index].url
                         }, {
                             count: 1
                         });
@@ -156,16 +156,16 @@ namespace Briar.Models
             BsonJavaScript groupBy = new BsonJavaScript(@"
                 function (x) {
                     return {
-                        month: x.PublishedOn.getMonth(),
-                        year: x.PublishedOn.getFullYear()
+                        month: x.published_on.getMonth(),
+                        year: x.published_on.getFullYear()
                     }
                 }");
 
             BsonJavaScript reduce = new BsonJavaScript(@"
                 function (x, y) {
                     y.count++;
-                    y.year = x.PublishedOn.getFullYear();
-                    y.month = x.PublishedOn.getMonth();
+                    y.year = x.published_on.getFullYear();
+                    y.month = x.published_on.getMonth();
                 }");
 
             BsonDocument initial = new BsonDocument(new Dictionary<string, object>{ 
